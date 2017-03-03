@@ -75,6 +75,12 @@
  * http://www.arduino.cc/en/Tutorial/Stepper
  */
 
+#include "system_version.h"
+
+#if (SYSTEM_VERSION < 0x00060100)
+   #error "System firmware must >= v0.6.1"
+#endif
+
 // ensure this library description is only included once
 #ifndef Stepper_h
 #define Stepper_h
@@ -118,4 +124,3 @@ class Stepper {
 };
 
 #endif
-
